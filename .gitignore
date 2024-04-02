@@ -1,0 +1,7 @@
+db.sqlite3
+*.pyc
+*.pyo
+__pycache__
+static/
+.env
+settings_local.py

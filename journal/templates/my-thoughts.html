@@ -1,0 +1,32 @@
+{% extends 'navbar.html' %}
+
+{% load static %}
+
+{% block content %}
+    <br>
+
+    {% for thought in Allthoughts %}
+    <div class ="container bg-white shadow-md p-5 form-layout">
+        {{thought.title}}
+            <br>
+        {{thought.content}}
+            <br>
+        {{thought.date_posted}}
+
+        <br>
+        <hr>
+        {{thought.user}}
+        <br>
+
+        <br>
+        <div class="text-center">
+        <a href="{% url 'update-thought' thought.id %}"> Update thought </a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="{% url 'delete-thought' thought.id %}"> Delete thought </a>
+        </div>
+
+
+    </div>
+
+        <br>
+    {% endfor %}
+
+{%  endblock %}

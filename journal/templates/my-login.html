@@ -2,20 +2,22 @@
 {% load crispy_forms_filters %}
 {% load static %}
 {% load crispy_forms_tags %}
-
 {% block content %}
+    <title> Secure thoughts | Login </title>
+<html>
 
 <body>
-<br>
+    {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <p id="message-timer" class="alert alert-success float-center text-center"> {{ message }} </p>
+        {% endif %}
+    {% endfor %}
+    <br>
+
     <div class ="container bg-white shadow-md p-5 form-layout">
 
         <h3> Login to your account </h3>
 
-        {% for message in messages %}
-            {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-                <p id="message-timer" class="alert alert-success float-center text-center"> {{ message }} </p>
-            {% endif %}
-        {% endfor %}
 
         <br> <br>
 
@@ -33,6 +35,15 @@
 
         </form>
 
+        <div class="text-center">
+            <br>
+            <a href="{% url 'register' %}"> Don't have an account? Register here </a>
+        </div>
+
+        <div class="text-center">
+            <br>
+            <a href="{% url 'reset_password' %}"> Did you forgot your password? </a>
+        </div>
 
     </div>
 

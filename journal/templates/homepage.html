@@ -1,9 +1,18 @@
-{% extends 'base.html' %}
 {% load static %}
 {% block content %}
+<html lang="en">
+    <title> Secure thoughts | Homepage </title>
+
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+    <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
 <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-center">
 
-    <a class="navbar-brand main-heading" href="{% url 'dashboard' %}"> &nbsp; Secure thoughts </a>
+    <a class="navbar-brand main-heading" href="{% url 'dashboard' %}"> &nbsp;Secure thoughts </a>
 
     <button
     class="navbar-toggler"
@@ -25,14 +34,14 @@
 
         <li class="nav-item">
     
-        <a class="btn btn-alert navbar-btn" type="button"  href="{% url 'register' %}">Register</a>
+        <a class="btn btn-alert navbar-btn" type="button" href="{% url 'register' %}">Register</a>
 
         </li>
    
 
         <li class="nav-item">
 
-        <a class="btn btn-alert navbar-btn" type="button"  href="{% url 'my-login' %}">Login</a>
+        <a class="btn btn-alert navbar-btn" type="button" size="60"  href="{% url 'my-login' %}">Login</a>
 
         </li>
       
@@ -47,8 +56,7 @@
 
 
 
-<body>
-    <body style="background-color: #f0f0f0;">
+<body style="background-color: #f0f0f0;">
     <br>
 
     <br>
@@ -65,7 +73,7 @@
 
         <br>
 
-        <p> This is a place where your thoughts are keep in the secret! </p>
+        <p> This is a place where your thoughts are kept in secret. </p>
 
         <br>
         
@@ -75,11 +83,10 @@
     
     </div>
 
-
-
 </body>
 
-
+{% endblock %}
+</html>
 
 {#<footer class="navbar navbar-expand-lg navbar-light bg-white">#}
 {##}
@@ -88,4 +95,4 @@
 {##}
 {##}
 {#</footer>#}
-{% endblock %}
+{#{% endblock %}#}

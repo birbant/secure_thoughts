@@ -2,13 +2,8 @@
 {% load crispy_forms_filters %}
 {% load static %}
 {% load crispy_forms_tags %}
-
-
 {% block content %}
-
-
-
-
+<title> Secure thoughts | Register </title>
 <body>
 <br>
 
@@ -29,14 +24,14 @@
             {{ form.password1|as_crispy_field }}
 
             {{ form.password2|as_crispy_field }}
-
+            <br>
             <button type="submit" class="btn btn-info btn-log w-100 btn-block p-3"> Create your account </button>
-
+            <br>
         </form>
 
         <div class="text-center">
             <br>
-            <p> Already have an account? </p> <a href="{% url 'my-login' %}"> Login </a>
+            <a href="{% url 'my-login' %}"> Already have an account? </a>
         </div>
 
     </div>

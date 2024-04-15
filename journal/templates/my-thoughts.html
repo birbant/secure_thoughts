@@ -1,11 +1,17 @@
 {% extends 'navbar.html' %}
-
 {% load static %}
-
 {% block content %}
-    <br>
+    {% for message in messages %}
+        {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+            <p id="message-timer" class="alert alert-success float-center text-center"> {{ message }} </p>
+        {% endif %}
+    {% endfor %}
 
-    {% for thought in Allthoughts %}
+    <title> Secure thoughts | My thoughts </title>
+
+    <br>
+<body>
+    {% for thought in AllThoughts %}
     <div class ="container bg-white shadow-md p-5 form-layout">
         {{thought.title}}
             <br>
@@ -15,12 +21,15 @@
 
         <br>
         <hr>
-        {{thought.user}}
+        Made by {{thought.user}}
         <br>
 
         <br>
         <div class="text-center">
-        <a href="{% url 'update-thought' thought.id %}"> Update thought </a> &nbsp; &nbsp; &nbsp; &nbsp; <a href="{% url 'delete-thought' thought.id %}"> Delete thought </a>
+        <a class="btn btn-info btn-log w-100 btn-block p-3" href="{% url 'update-thought' thought.id %}"> Update thought </a>
+
+            &nbsp; &nbsp;
+        <a class="btn btn-danger btn-log w-100 btn-block p-3" href="{% url 'delete-thought' thought.id %}"> Delete thought </a>
         </div>
 
 
@@ -28,5 +37,6 @@
 
         <br>
     {% endfor %}
-
+</body>
+<script src="{% static 'js/app.js' %}"></script>
 {%  endblock %}

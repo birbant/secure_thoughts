@@ -1,12 +1,12 @@
-{%  load static %}
+{% load static %}
 <html lang="en">
+<title> Secure thoughts | User account </title>
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
     <link rel="stylesheet" type="text/css" href="https://bootswatch.com/5/lux/bootstrap.min.css">
+    <meta name="viewport" content="width-device-width, initial-scale=1, maximum-scale=1"/>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-
-
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-white justify-content-center">
 
@@ -31,40 +31,29 @@
     <ul class="navbar-nav ms-auto">
 
         <li class="nav-link">
-
         <a class="nav-link"  href="{% url 'dashboard' %}"> Dashboard </a>
-
         </li>
 
         <li class="nav-link">
-
         <a class="nav-link" href="{% url 'create-thought' %}"> Create thought </a>
-
         </li>
 
         <li class="nav-link">
-
         <a class="nav-link" href="{% url 'my-thoughts' %}"> My thoughts </a>
-
         </li>
 
         <li class="nav-link">
-
         <a class="nav-link" href="{% url 'profile-management' %}"> Profile management </a>
-
         </li>
 
-
+        <li class="nav-link">
+        <a class="nav-link" href="{% url 'user-logout' %}"> Logout </a>
+        </li>
     </ul>
-
-
     </div>
-
-
 </nav>
 
 {%  block content %}
 {%  endblock %}
 
-</body>
 </html>

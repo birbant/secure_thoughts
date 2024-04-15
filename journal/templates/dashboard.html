@@ -1,12 +1,15 @@
 {% extends 'navbar.html' %}
 {% load static %}
-
 {% block content %}
+    <title> Secure thoughts | Dashboard </title>
+
     <br>
 
     <div class ="container bg-white shadow-md p-5 form-layout">
-        <h1> Dashboard </h1> {{ user }} <br>
-           <a href="{% url 'user-logout' %}"> Logout here </a>
+        <h2> {{ user }} </h2>
+        <p> Welcome {{ user }}! This is your dashboard. </p>
+
+        <img style="width: 100px; height: 100px;" src="{{ profilePic.profile_pic.url }}">
 
     </div>
 

@@ -1,0 +1,50 @@
+{% extends 'navbar.html' %}
+{% load crispy_forms_filters %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block content %}
+    <title> Secure thoughts | Profile management </title>
+
+    <br>
+
+    <div class ="container bg-white shadow-md p-5 form-layout">
+        <h3> Update a profile </h3>
+        <form method="POST" autocomplete="off">
+
+            {% csrf_token %}
+
+            {{UserUpdateForm|crispy}}
+            <br>
+
+            <button type="submit" class="btn btn-info btn-log w-100 btn-block p-3"> Update your username or email </button>
+
+        </form>
+
+    </div>
+    <br>
+    <div class ="container bg-white shadow-md p-5 form-layout">
+        <h3> Update a profile picture </h3>
+        <form method="POST" autocomplete="off" enctype="multipart/form-data" lang="en">
+
+            {% csrf_token %}
+
+            {{ProfileUpdateForm|crispy}}
+            <br>
+
+            <button type="submit" class="btn btn-info btn-log w-100 btn-block p-3"> Update profile picture </button>
+
+        </form>
+
+    </div>
+
+
+
+
+    <br>
+    <div class ="container bg-white shadow-md p-5 form-layout">
+
+    <h3> Delete your account </h3>
+    <a href="{% url 'delete-account' %}"> Proceed to delete your account </a>
+    </div>
+
+{%  endblock %}

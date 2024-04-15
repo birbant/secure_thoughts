@@ -1,14 +1,14 @@
 {% extends 'navbar.html' %}
-
 {% load crispy_forms_filters %}
 {% load crispy_forms_tags %}
 {% load static %}
-
 {% block content %}
+    <title> Secure thoughts | Create thought </title>
+
     <br>
 
     <div class ="container bg-white shadow-md p-5 form-layout">
-        <h1> Create a thought </h1>
+        <h3> Create a thought </h3>
         <form method="POST" autocomplete="off">
 
             {% csrf_token %}
